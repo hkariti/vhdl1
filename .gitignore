@@ -5,3 +5,5 @@
 *.mpf
 *.wlf
 work
+wlf*
+*.mti
