@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 use IEEE.std_logic_arith.all;
 
-entity BombStateMachine is
+entity bomb_sm is
 	port ( 	clk:	in 	std_logic;
 		resetN:		in 	std_logic;
 	    startN:		in 	std_logic;
@@ -13,10 +13,11 @@ entity BombStateMachine is
 		
 		CounterEnable:  out	std_logic;  --enable('1')/disable('0')  
 		CounterLoadN:  out	std_logic;  --/load ('0')  
-		LampEnable: 	out	std_logic;
-end BombStateMachine;
+		LampEnable: 	out	std_logic
+    );
+end bomb_sm;
 
-architecture arc_BombStateMachine of BombStateMachine is 
+architecture arc_BombStateMachine of bomb_sm is 
   type state_type is (idle, arm, run, pause, lamp_on, lamp_off); --enumerated type for state machine
   signal state : state_type;
 begin
