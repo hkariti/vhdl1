@@ -13,8 +13,7 @@ entity BombStateMachine is
 		
 		CounterEnable:  out	std_logic;  --enable('1')/disable('0')  
 		CounterLoadN:  out	std_logic;  --/load ('0')  
-		LampOn: 	out	std_logic;
-        LampOff:  out std_logic); -- on('1') off('0')
+		LampEnable: 	out	std_logic;
 end BombStateMachine;
 
 architecture arc_BombStateMachine of BombStateMachine is 
@@ -26,15 +25,13 @@ begin
         if resetN = '0' then
             state <= idle;
 			CounterEnable <= '0';
-			LampOn<= '0';
-			LampOff<= '0';
+			LampEnable<= '0';
 			CounterLoadN <= '1' ; 
        elsif (rising_edge(clk)) then
 	   -- preset all outputs ,override in the state machine if needed  
 	   		CounterLoadN <= '1' ; 
 			CounterEnable <= '0';
-			LampOn<= '0';
-			LampOff<= '0';
+			LampEnable<= '0';
 	
 	   
             -- Determine the next state synchronously, based on
@@ -57,7 +54,7 @@ begin
                         state <= pause;
                     elsif TC = '1' then
                         state <= lamp_on;
-                        LampOn <= '1';
+                        LampEnable <= '1';
                     else
                         CounterEnable <= '1';
                     end if;
@@ -69,16 +66,16 @@ begin
                 when lamp_on =>
                     if SlowClk = '1' then
                         state <= lamp_off;
-                        LampOff <= '1';
+                        LampEnable <= '0';
                     else
-                        LampOn <= '1';
+                        LampEnable <= '1';
                     end if;
                 when lamp_off =>
                     if SlowClk = '0' then
                         state <= lamp_on;
-                        LampOn <= '1';
+                        LampEnable <= '1';
                     else
-                        LampOff <= '1';
+                        LampEnable <= '0';
                     end if;
             end case;
         end if;
