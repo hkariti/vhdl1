@@ -1,0 +1,28 @@
+|NUM_LOCK
+resetN => out_led.ACLR
+resetN => pr_state.PRESET
+clk => out_led.CLK
+clk => pr_state.CLK
+din[0] => Equal0.IN8
+din[1] => Equal0.IN7
+din[2] => Equal0.IN6
+din[3] => Equal0.IN5
+din[4] => Equal0.IN4
+din[5] => Equal0.IN3
+din[6] => Equal0.IN2
+din[7] => Equal0.IN1
+din[8] => Equal0.IN0
+key_code[0] => Equal0.IN17
+key_code[1] => Equal0.IN16
+key_code[2] => Equal0.IN15
+key_code[3] => Equal0.IN14
+key_code[4] => Equal0.IN13
+key_code[5] => Equal0.IN12
+key_code[6] => Equal0.IN11
+key_code[7] => Equal0.IN10
+key_code[8] => Equal0.IN9
+make => process_0.IN1
+break => process_0.IN1
+dout <= out_led.DB_MAX_OUTPUT_PORT_TYPE
+
+

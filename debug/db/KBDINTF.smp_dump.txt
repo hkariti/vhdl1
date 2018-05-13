@@ -1,0 +1,8 @@
+
+State Machine - |bitrec|present_state
+Name present_state.NewData present_state.ChkData present_state.LowClk present_state.HighClk present_state.idle 
+present_state.idle 0 0 0 0 0 
+present_state.HighClk 0 0 0 1 1 
+present_state.LowClk 0 0 1 0 1 
+present_state.ChkData 0 1 0 0 1 
+present_state.NewData 1 0 0 0 1 
