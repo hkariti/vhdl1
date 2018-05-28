@@ -7,3 +7,7 @@
 work
 wlf*
 *.mti
+
+db/
+incremental_db/
+*.sof
