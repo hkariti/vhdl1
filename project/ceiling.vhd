@@ -7,7 +7,7 @@ use ieee.std_logic_arith.all;
 -- Dudy Nov 13 2017
 
 
-entity floor is
+entity ceiling is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	
 	   	CLK  		: in std_logic;
@@ -18,14 +18,14 @@ port 	(
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) 
 	);
-end floor;
+end ceiling;
 
-architecture behav of floor is 
+architecture behav of ceiling is 
 
 constant object_X_size : integer := 58;
-constant object_Y_size : integer := 70;
+constant object_Y_size : integer := 68;
 constant ObjectStartY : integer := 0;
-constant ObjectEndY : integer := 479;
+constant ObjectEndY : integer := object_Y_size;
 
 --constant R_high		: integer := 7;
 --constant R_low		: integer := 5;
@@ -111,7 +111,7 @@ begin
 -- test if ooCoord is in the rectangle defined by Start and End 
     drawing_Y	<= '1' when  (oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectEndY) else '0';
 -- calculate offset from start corner 
-	bCoord_Y 	<= (ObjectcEndY - 1 -(oCoord_Y - ObjectStartY)) when ( drawing_Y = '1'  ) else 0 ; 
+	bCoord_Y 	<= ((oCoord_Y - ObjectStartY)) when ( drawing_Y = '1'  ) else 0 ; 
 
 process ( RESETn, CLK)
    begin
