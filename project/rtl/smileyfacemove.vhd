@@ -12,6 +12,7 @@ port 	(
 		RESETn			: in std_logic; --			//	50 MHz
 		timer_done		: in std_logic;
 		up     			: in std_logic;
+		speed          : in integer;
 		ObjectStartX	: out integer ;
 		ObjectStartY	: out integer
 		
@@ -36,18 +37,12 @@ begin
 				ObjectStartY_t	<= StartY ;
 		elsif rising_edge(CLK) then		
 			if timer_done = '1' then
-				if ObjectStartY_t >= 470 or ObjectStartY_t <= 10  then
-					ObjectStartX_t <= StartX;
-					ObjectStartY_t <= StartY;
+				if (up = '1') then 
+				  ObjectStartY_t  <= ObjectStartY_t - speed; -- move to the up
 				else
-				   if (up = '1') then 
-					    ObjectStartY_t  <= ObjectStartY_t - 1; -- move to the up
-				  	else
-						ObjectStartY_t <= ObjectStartY_t + 1;
-					end if;
+					ObjectStartY_t <= ObjectStartY_t + speed;
 				end if;
 			end if;
-			
 		end if;
 		end process ;
 ObjectStartX	<= ObjectStartX_t;		-- copy to outputs 	

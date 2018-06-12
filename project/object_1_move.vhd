@@ -24,8 +24,8 @@ architecture behav of object_1_move is
 constant StartX : integer := 640;   -- starting point
   
 
-signal ObjectStartX_t : integer range 0 to 640;  --vga screen size 
-signal ObjectStartY_t : integer range 80 to 400;
+signal ObjectStartX_t : integer; -- range 0 to 640;  --vga screen size 
+signal ObjectStartY_t : integer; -- range 80 to 400;
 begin
 		process ( RESETn,CLK)
 		begin

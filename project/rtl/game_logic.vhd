@@ -28,6 +28,8 @@ architecture behav of game_logic is
 	signal smileyTarget : integer;
 	signal life_t: unsigned(2 downto 0) := "111";
 	signal score_t: integer := 0;	
+	signal speed_t : integer;
+	signal speed_counter : integer := 0;
 begin 
 process (CLOCK_50, resetN)
 begin
@@ -38,10 +40,15 @@ begin
 		score_t <= 0;
 		life_t <= "111";
 		game_over <= '0';
-		speed <= 1;
+		speed_t <= 2;
 	elsif (rising_edge(CLOCK_50)) then
 		if sec = '1' then
-			score_t <= score_t + 1;
+			score_t <= score_t + speed_t;
+			speed_counter <= speed_counter + 1;
+			if speed_counter = 10 then
+				speed_t <= speed_t + 1;
+				speed_counter <= 0;
+			end if;
 		end if;
 		case sm is
 			when Idle =>
@@ -52,6 +59,8 @@ begin
 				end if;
 			when collisionStart =>
 				sound_on <= '1';
+				speed_t <= 1;
+				speed_counter <= 0;
 				restart_game <= '0';
 				life_t <= shift_right(life_t, 1);
 				if (life_t = "000") then
@@ -73,7 +82,7 @@ begin
 		end case;
 	end if;
 end process;
-
+speed <= speed_t;
 score <= score_t;
 life <= life_t;
 
