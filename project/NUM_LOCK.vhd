@@ -26,16 +26,18 @@ begin
 				out_led <= '0';
 				pr_state := st_break;
 			elsif rising_edge(clk) then
+				out_led <= '0';
 				case pr_state is
 					when st_break =>
 						if(din = key_code) and (make = '1') then
-							out_led <= not(out_led);
+							out_led <= '1';
 							pr_state := st_pressed;
 						end if;
 					when st_pressed =>
 						if(din = key_code) and (break = '1') then
 							pr_state := st_break;
 						end if;
+						out_led <= '1';
 				end case;
 			end if;
 	end process;

@@ -34,7 +34,7 @@ begin
 		  if RESETn = '0' then
 				ObjectStartX_t	<= StartX;
 				ObjectStartY_t	<= StartY ;
-		elsif rising_edge(CLK) then
+		elsif rising_edge(CLK) then		
 			if timer_done = '1' then
 				if ObjectStartY_t >= 470 or ObjectStartY_t <= 10  then
 					ObjectStartX_t <= StartX;
