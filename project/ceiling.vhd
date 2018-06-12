@@ -111,11 +111,7 @@ begin
 -- test if ooCoord is in the rectangle defined by Start and End 
     drawing_Y	<= '1' when  (oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectEndY) else '0';
 -- calculate offset from start corner 
-<<<<<<< HEAD
 	bCoord_Y 	<= ((oCoord_Y - ObjectStartY)) when ( drawing_Y = '1'  ) else 0 ; 
-=======
-	bCoord_Y 	<= (ObjectEndY - 1 -(oCoord_Y - ObjectStartY)) when ( drawing_Y = '1'  ) else 0 ; 
->>>>>>> 78bde34beaa6b24a14bb0335a0d3c7424e13c05e
 
 process ( RESETn, CLK)
    begin
