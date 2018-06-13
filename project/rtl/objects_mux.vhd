@@ -29,8 +29,18 @@ port 	(
 		h_drawing_request : in std_logic;
 		h_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- c input signal 
 		
+		i_drawing_request : in std_logic;	-- not used in this exammple 
+		i_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y input signal 
+		
+		j_drawing_request : in std_logic;	-- not used in this exammple 
+		j_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y input signal 
+
+		k_drawing_request : in std_logic;	-- not used in this exammple 
+		k_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y input signal 
+
 		y_drawing_request : in std_logic;	-- not used in this exammple 
 		y_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y input signal 
+
 
 		m_mVGA_R 	: out std_logic_vector(7 downto 0); --	,  
 		m_mVGA_G 	: out std_logic_vector(7 downto 0); --	, 
@@ -67,6 +77,12 @@ begin
 		   m_mVGA_t <= g_mVGA_RGB;  -- second priority from C
 		elsif (h_drawing_request = '1') then
 		   m_mVGA_t <= h_mVGA_RGB;  -- second priority from C
+		elsif (i_drawing_request = '1') then
+		   m_mVGA_t <= i_mVGA_RGB;  -- second priority from C
+		elsif (j_drawing_request = '1') then
+		   m_mVGA_t <= j_mVGA_RGB;  -- second priority from C
+		elsif (k_drawing_request = '1') then
+		   m_mVGA_t <= k_mVGA_RGB;  -- second priority from C
 	   else
 			m_mVGA_t <= y_mVGA_RGB ; -- last priority from y
 		end if; 

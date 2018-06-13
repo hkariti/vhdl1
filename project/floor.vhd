@@ -25,7 +25,7 @@ architecture behav of floor is
 constant object_X_size : integer := 58;
 constant object_Y_size : integer := 25;
 constant ObjectStartY : integer := 479 - object_Y_size;
-constant ObjectEndY : integer := 479;
+constant ObjectEndY : integer := 480;
 
 --constant R_high		: integer := 7;
 --constant R_low		: integer := 5;
