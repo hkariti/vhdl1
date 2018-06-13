@@ -134,7 +134,7 @@ process ( RESETn, CLK)
 					objectStartX <= 0;
 				end if;
 			end if;
-			mVGA_RGB <= x"03";
+			mVGA_RGB <= x"F0";
 			bCoord_X <= (objectStartX + oCoord_X) mod object_X_size;
 			drawing_request <= object(bCoord_X, bCoord_Y);
 	end if;

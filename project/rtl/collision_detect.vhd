@@ -14,7 +14,14 @@ port 	(
 		drawing_request_sec4: in std_logic;
 		drawing_request_sec5: in std_logic;
 		drawing_request_sec6: in std_logic;
-		collision: out std_logic
+		drawing_request_sec7: in std_logic;
+		drawing_request_sec8: in std_logic;
+		drawing_request_sec9: in std_logic;
+		collision: out std_logic;
+		food_eaten5: out std_logic;
+		food_eaten6: out std_logic;
+		food_eaten7: out std_logic
+
 	);
 end collision_detect;
 
@@ -29,5 +36,8 @@ collision <= resetN and ((drawing_request_main and drawing_request_sec1) or
 								(drawing_request_main and drawing_request_sec6)
 								);
 
-		
+food_eaten5 <=	drawing_request_main and drawing_request_sec7;
+food_eaten6 <=	drawing_request_main and drawing_request_sec8;
+food_eaten7 <=	drawing_request_main and drawing_request_sec9;
+
 end behav;		

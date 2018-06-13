@@ -12,6 +12,7 @@ port 	(
 		collision: in std_logic;
 		smileyStartX: in integer;
 		smileyStartY: in integer;
+		food_eaten: in std_logic;
 		sound_on: out std_logic;
 		score: out integer;
 		life: out unsigned(2 downto 0);
@@ -42,6 +43,9 @@ begin
 		game_over <= '0';
 		speed_t <= 2;
 	elsif (rising_edge(CLOCK_50)) then
+		if food_eaten = '1' then
+			score_t <= score_t + 20;
+		end if;
 		if sec = '1' then
 			score_t <= score_t + speed_t;
 			speed_counter <= speed_counter + 1;
