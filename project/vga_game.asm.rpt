@@ -1,6 +1,6 @@
 Assembler report for vga_game
-Tue Jun 12 16:20:37 2018
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Wed Jun 13 10:08:52 2018
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
 ---------------------
@@ -11,7 +11,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/vga_game.sof
+  6. Assembler Device Options: Z:/lab1/trunk/project/vga_game.sof
   7. Assembler Messages
 
 
@@ -27,18 +27,19 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jun 12 16:20:37 2018 ;
+; Assembler Status      ; Successful - Wed Jun 13 10:08:52 2018 ;
 ; Revision Name         ; vga_game                              ;
 ; Top-level Entity Name ; TOP_SIFTACH                           ;
 ; Family                ; Cyclone V                             ;
@@ -63,23 +64,23 @@ refer to the applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+----------------------------------------------------------+
-; Assembler Generated Files                                ;
-+----------------------------------------------------------+
-; File Name                                                ;
-+----------------------------------------------------------+
-; C:/LIMUDIM/semester 6/MAABADA1/lab1/project/vga_game.sof ;
-+----------------------------------------------------------+
++------------------------------------+
+; Assembler Generated Files          ;
++------------------------------------+
+; File Name                          ;
++------------------------------------+
+; Z:/lab1/trunk/project/vga_game.sof ;
++------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/vga_game.sof ;
-+----------------+-------------------------------------------------------------------+
-; Option         ; Setting                                                           ;
-+----------------+-------------------------------------------------------------------+
-; JTAG usercode  ; 0x01110C77                                                        ;
-; Checksum       ; 0x01110C77                                                        ;
-+----------------+-------------------------------------------------------------------+
++--------------------------------------------------------------+
+; Assembler Device Options: Z:/lab1/trunk/project/vga_game.sof ;
++----------------+---------------------------------------------+
+; Option         ; Setting                                     ;
++----------------+---------------------------------------------+
+; JTAG usercode  ; 0x0193220E                                  ;
+; Checksum       ; 0x0193220E                                  ;
++----------------+---------------------------------------------+
 
 
 +--------------------+
@@ -87,16 +88,15 @@ refer to the applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Jun 12 16:20:27 2018
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+    Info: Processing started: Wed Jun 13 10:08:39 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off vga_game -c vga_game
-Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/intelfpga_lite/17.1/quartus/bin64/assignment_defaults.qdf
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4887 megabytes
-    Info: Processing ended: Tue Jun 12 16:20:37 2018
-    Info: Elapsed time: 00:00:10
+    Info: Peak virtual memory: 785 megabytes
+    Info: Processing ended: Wed Jun 13 10:08:52 2018
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:10
 
 

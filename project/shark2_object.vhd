@@ -23,7 +23,7 @@ end shark2_object;
 
 architecture behav of shark2_object is 
 
-constant object_X_size : integer := 53;
+constant object_X_size : integer := 98;
 constant object_Y_size : integer := 70;
 --constant R_high		: integer := 7;
 --constant R_low		: integer := 5;
