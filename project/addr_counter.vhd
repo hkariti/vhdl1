@@ -4,31 +4,45 @@ USE ieee.std_logic_arith.all;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity addr_counter is
-   port( en: in std_logic;
-	en1: in std_logic;
- 	 clk_in: in std_logic;
- 	 resetN: in std_logic;
- 	 addr: out std_logic_vector(14 downto 0));
-end ;
+    port(
+            clk_in: in std_logic;
+            resetN: in std_logic;
+            en: in std_logic;
+            start: in std_logic;
+            stop: in std_logic;
+            length: in integer;
+            addr: out std_logic_vector(14 downto 0)
+        );
+end;
  
 architecture Behavioral of addr_counter is
-   signal temp: std_logic_vector(14 downto 0);
+    type state is (idle, playing);
+    signal sm : state;
+    signal counter: std_logic_vector(14 downto 0);
 begin 
   
 process(clk_in,resetN)
-
-   begin
-      if ResetN='0' then
-         temp <= "000000000000000";
-      elsif(rising_edge(clk_in)) then
-         if en1='1' and en='1' then
-            if temp = "111111111111111" then
-               temp <= (others => '0');
-            else
-               temp <= temp + 1;
-            end if;
-         end if;
-      end if;
+begin
+    if ResetN='0' then
+        counter <= "000000000000000";
+        sm <= idle;
+    elsif(rising_edge(clk_in)) then
+        case sm is
+            when idle =>
+                counter <= (others => '0');
+                if (start = '1') then
+                    sm <= playing;
+                end if;
+            when playing =>
+                if en='1' then
+                    if (stop = '1' or counter = conv_std_logic_vector(length)) then
+                        sm <= idle;
+                    else
+                        counter <= counter + 1;
+                    end if;
+                end if;
+        end case;
+    end if;
    end process;
-   addr <= temp;
+   addr <= counter;
 end Behavioral;
