@@ -12,12 +12,11 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 */
 //#pragma file_not_in_maxplusii_format
 (header "graphic" (version "1.4"))
@@ -164,6 +163,22 @@ agreement for further details.
 		(line (pt 125 12)(pt 129 8))
 	)
 	(text "VCC" (rect 144 7 164 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 176 640 344 656)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "KEY[1]" (rect 5 0 41 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -3245,7 +3260,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 696 984 760 1032)
+	(rect 688 992 752 1040)
 	(text "OR3" (rect 1 0 19 10)(font "Arial" (font_size 6)))
 	(text "inst35" (rect 3 37 31 54)(font "Intel Clear" ))
 	(port
@@ -3282,6 +3297,65 @@ agreement for further details.
 		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
 		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
 		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
+	)
+)
+(symbol
+	(rect 408 464 456 528)
+	(text "OR2" (rect 38 45 48 63)(font "Arial" (font_size 6))(vertical))
+	(text "inst17" (rect -6 33 11 61)(font "Intel Clear" )(vertical))
+	(port
+		(pt 16 64)
+		(input)
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 13 45 25 62)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 16 64)(pt 16 49))
+	)
+	(port
+		(pt 32 64)
+		(input)
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 29 45 41 62)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 32 64)(pt 32 49))
+	)
+	(port
+		(pt 24 0)
+		(output)
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 21 -1 33 16)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 24 16)(pt 24 0))
+	)
+	(drawing
+		(line (pt 12 50)(pt 12 39))
+		(line (pt 35 50)(pt 35 39))
+		(arc (pt 29 57)(pt 19 57)(rect 7 45 40 78))
+		(arc (pt 35 39)(pt 24 15)(rect -28 7 35 70))
+		(arc (pt 24 15)(pt 13 39)(rect 12 7 75 70))
+	)
+	(flipx_rotate90)
+)
+(symbol
+	(rect 368 632 416 664)
+	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
+	(text "inst19" (rect 3 21 31 38)(font "Intel Clear" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
 	)
 )
 (connector
@@ -3598,14 +3672,6 @@ agreement for further details.
 	(pt 360 320)
 )
 (connector
-	(pt 392 536)
-	(pt 424 536)
-)
-(connector
-	(pt 424 536)
-	(pt 424 416)
-)
-(connector
 	(text "endOfFrame" (rect 304 336 364 353)(font "Intel Clear" ))
 	(pt 360 352)
 	(pt 296 352)
@@ -3712,11 +3778,6 @@ agreement for further details.
 (connector
 	(pt 96 440)
 	(pt 112 440)
-)
-(connector
-	(text "resetN" (rect 234 424 267 436)(font "Arial" ))
-	(pt 112 440)
-	(pt 720 440)
 )
 (connector
 	(text "CLOCK_50" (rect 106 240 161 252)(font "Arial" ))
@@ -4100,10 +4161,6 @@ agreement for further details.
 	(pt 208 416)
 )
 (connector
-	(pt 424 416)
-	(pt 208 416)
-)
-(connector
 	(pt 360 368)
 	(pt 208 368)
 )
@@ -4201,7 +4258,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "<<__$DEF_ALIAS233>>" (rect -1482 752 -1370 769)(font "Intel Clear" )(invisible))
 	(pt -1544 768)
 	(pt -1312 768)
 	(bus)
@@ -4812,26 +4868,8 @@ agreement for further details.
 	(pt -1400 0)
 )
 (connector
-	(text "<<__$DEF_ALIAS8266>>" (rect 720 968 838 985)(font "Intel Clear" )(invisible))
-	(pt 760 984)
-	(pt 768 984)
-)
-(connector
-	(pt 760 984)
-	(pt 760 1008)
-)
-(connector
-	(pt 624 984)
-	(pt 624 1016)
-)
-(connector
 	(pt 616 984)
 	(pt 624 984)
-)
-(connector
-	(text "food_eaten7" (rect 633 1000 693 1017)(font "Intel Clear" ))
-	(pt 624 1016)
-	(pt 696 1016)
 )
 (connector
 	(text "food_eaten6" (rect 624 952 684 969)(font "Intel Clear" ))
@@ -4839,20 +4877,71 @@ agreement for further details.
 	(pt 616 968)
 )
 (connector
-	(pt 656 1008)
+	(pt 432 416)
+	(pt 208 416)
+)
+(connector
+	(pt 392 536)
+	(pt 424 536)
+)
+(connector
+	(pt 424 536)
+	(pt 424 528)
+)
+(connector
+	(text "resetN" (rect 234 424 267 436)(font "Arial" ))
+	(pt 112 440)
+	(pt 720 440)
+)
+(connector
+	(pt 432 416)
+	(pt 432 464)
+)
+(connector
+	(pt 440 528)
+	(pt 440 648)
+)
+(connector
+	(pt 440 648)
+	(pt 416 648)
+)
+(connector
+	(pt 368 648)
+	(pt 344 648)
+)
+(connector
+	(text "<<__$DEF_ALIAS8266>>" (rect 720 968 838 985)(font "Intel Clear" )(invisible))
+	(pt 768 984)
+	(pt 752 984)
+)
+(connector
+	(pt 752 984)
+	(pt 752 1016)
+)
+(connector
+	(pt 624 984)
+	(pt 624 1024)
+)
+(connector
+	(text "food_eaten7" (rect 625 1008 685 1025)(font "Intel Clear" ))
+	(pt 624 1024)
+	(pt 688 1024)
+)
+(connector
 	(pt 656 968)
+	(pt 656 1016)
 )
 (connector
-	(pt 656 1008)
-	(pt 696 1008)
+	(pt 656 1016)
+	(pt 688 1016)
 )
 (connector
-	(pt 696 1000)
-	(pt 680 1000)
+	(pt 680 1008)
+	(pt 688 1008)
 )
 (connector
-	(pt 680 1000)
 	(pt 680 952)
+	(pt 680 1008)
 )
 (junction (pt 112 440))
 (junction (pt 592 256))
