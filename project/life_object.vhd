@@ -14,14 +14,16 @@ port 	(
 		RESETn		: in std_logic;
 		oCoord_X	: in integer;
 		oCoord_Y	: in integer;
-		life	: in std_logic_vector(2 downto 0);
-		life_drawing_request	: out std_logic ;
+		ObjectStartX	: in integer;
+		life_on : in std_logic;
+		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) 
 	);
-end fish_object;
+end life_object;
 
 architecture behav of life_object is 
 
+constant ObjectStartY  : integer := 15;
 constant object_X_size : integer := 76;
 constant object_Y_size : integer := 52;
 --constant R_high		: integer := 7;
@@ -153,35 +155,25 @@ signal drawing_X : std_logic := '0';
 signal drawing_Y : std_logic := '0';
 
 --		
-
-signal ObjectStartY : integer := 15;
-signal ObjectStartX1 : integer := 590;
-signal ObjectStartX2 : integer := 540;
-signal ObjectStartX3 : integer := 490;
+signal objectEndX : integer;
+signal objectEndY : integer;
 
 begin
 
 -- Calculate object end boundaries
-objectEndX1	<= object_X1_size+ObjectStartX1;
-objectEndX2	<= object_X1_size+ObjectStartX2;
-objectEndX3	<= object_X1_size+ObjectStartX3;
+objectEndX	<= object_X_size+ObjectStartX;
 objectEndY	<= object_Y_size+ObjectStartY;
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
 -- test if ooCoord is in the rectangle defined by Start and End 
-	drawing_X	<= '1' when  ((oCoord_X  >= ObjectStartX1) and  (oCoord_X < objectEndX1)) or ((oCoord_X  >= ObjectStartX2) and  (oCoord_X < objectEndX2)) or ((oCoord_X  >= ObjectStartX3) and  (oCoord_X < objectEndX3)) else '0';		
-   drawing_Y	<= '1' when  (oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectEndY) else '0';
+	drawing_X	<= '1' when  (oCoord_X  >= ObjectStartX) and  (oCoord_X < objectEndX) else '0';
+    drawing_Y	<= '1' when  (oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectEndY) else '0';
 
 -- calculate offset from start corner 
-	bCoord_X1 	<= (oCoord_X - ObjectStartX1) when ( drawing_X1 = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y1 	<= (oCoord_Y - ObjectStartY) when ( drawing_X1 = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_X 	<= (oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_Y 	<= (oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 
-	bCoord_X2 	<= (oCoord_X - ObjectStartX2) when ( drawing_X2 = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y2 	<= (oCoord_Y - ObjectStartY) when ( drawing_X2 = '1' and  drawing_Y = '1'  ) else 0 ; 
-
-	bCoord_X3 	<= (oCoord_X - ObjectStartX3) when ( drawing_X3 = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y3 	<= (oCoord_Y - ObjectStartY) when ( drawing_X3 = '1' and  drawing_Y = '1'  ) else 0 ; 
 
 process ( RESETn, CLK)
 
@@ -192,9 +184,10 @@ process ( RESETn, CLK)
 		drawing_request	<=  '0' ;
 
 		elsif rising_edge(CLK) then
-			if life := "111" then
+			if life_on = '1' then
 				mVGA_RGB	<=  object_colors(bCoord_Y/2, bCoord_X/2);	--get from colors table 
 				drawing_request	<= object(bCoord_Y/2, bCoord_X/2) and drawing_X and drawing_Y ; -- get from mask table if inside rectangle  
+		end if;
 	end if;
 
   end process;
