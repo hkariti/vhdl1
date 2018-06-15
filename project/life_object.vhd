@@ -161,8 +161,8 @@ signal objectEndY : integer;
 begin
 
 -- Calculate object end boundaries
-objectEndX	<= object_X_size+ObjectStartX;
-objectEndY	<= object_Y_size+ObjectStartY;
+objectEndX	<= object_X_size/2+ObjectStartX;
+objectEndY	<= object_Y_size/2+ObjectStartY;
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
@@ -185,8 +185,8 @@ process ( RESETn, CLK)
 
 		elsif rising_edge(CLK) then
 			if life_on = '1' then
-				mVGA_RGB	<=  object_colors(bCoord_Y/2, bCoord_X/2);	--get from colors table 
-				drawing_request	<= object(bCoord_Y/2, bCoord_X/2) and drawing_X and drawing_Y ; -- get from mask table if inside rectangle  
+				mVGA_RGB	<=  object_colors(bCoord_Y*2, bCoord_X*2);	--get from colors table 
+				drawing_request	<= object(bCoord_Y*2, bCoord_X*2) and drawing_X and drawing_Y ; -- get from mask table if inside rectangle  
 		end if;
 	end if;
 
