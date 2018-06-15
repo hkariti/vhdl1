@@ -24,7 +24,7 @@ port 	(
 end game_logic;
 
 architecture behav of game_logic is
-	type state is (Idle, collisionStart, saveInitialX, waitForSmileyPosition);
+	type state is (Idle, collisionStart);
 	signal sm : state;
 	signal smileyTarget : integer;
 	signal life_t: unsigned(2 downto 0) := "111";

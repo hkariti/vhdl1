@@ -16,14 +16,14 @@ entity image_addr_conv is
         );
 end ;
  
-architecture Behavioral of addr_counter is
+architecture Behavioral of image_addr_conv is
    signal addr_t: integer := 0;
 begin 
   
 process(clk_in,resetN)
    begin
       if ResetN='0' then
-         addr_t := 0;
+         addr_t <= 0;
       elsif(rising_edge(clk_in)) then
           if (oCoord_X < size_X and oCoord_Y < size_Y) then
               addr_t <= oCoord_X/scale*(size_X/scale) + oCoord_Y/scale;
