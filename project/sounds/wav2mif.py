@@ -1,15 +1,20 @@
+import math
 import array
 import wave
 
 def wave2mif(file_in, file_out):
-    depth = len(samples_array)
     width = 8
     fin = wave.open(file_in)
     samples_array = array.array('B', fin.readframes(fin.getnframes()))
+    # Round up to the nearest power of 2 for depth
+    depth = int(2**math.ceil(math.log(len(samples_array),2)))
     f = open(file_out, 'w')
     f.write("DEPTH = {0};\nWIDTH = {1};\nADDRESS_RADIX = HEX;\nDATA_RADIX = HEX;\nCONTENT\nBEGIN\n".format(depth, width))
     for addr, content in enumerate(samples_array):
         f.write("{0:05X} : {1:02X};\n".format(addr, content))
+        depth -= 1
+    f.write("\nEND;")
+    f.close()
         
 if __name__ == '__main__':
     import sys
