@@ -26,7 +26,7 @@ process(clk_in,resetN)
          addr_t <= 0;
       elsif(rising_edge(clk_in)) then
           if (oCoord_X < size_X and oCoord_Y < size_Y) then
-              addr_t <= oCoord_X/scale*(size_X/scale) + oCoord_Y/scale;
+              addr_t <= oCoord_Y/scale*(size_X/scale) + oCoord_X/scale;
           end if;
       end if;
    end process;
