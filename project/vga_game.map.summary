@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Jun 15 18:44:49 2018
+Analysis & Synthesis Status : Successful - Fri Jun 15 20:23:08 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : vga_game
 Top-level Entity Name : TOP_SIFTACH
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1938
+Total registers : 1913
 Total pins : 64
 Total virtual pins : 0
-Total block memory bits : 1,050,368
+Total block memory bits : 1,050,112
 Total DSP Blocks : 8
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

@@ -39,8 +39,12 @@ begin
 				ObjectStartY_t	<= recalc_Y;
 				ObjectStartX_t	<= recalc_X;
 			elsif rising_edge(CLK) then
+				if collision = '1' then
+						ObjectStartY_t <= recalc_Y;
+						ObjectStartX_t <= recalc_X;
+				end if;
 				if timer_done = '1' then
-					if ObjectStartY_t <=  0 or collision = '1' then
+					if ObjectStartY_t <=  0 then
 						ObjectStartY_t <= recalc_Y;
 						ObjectStartX_t <= recalc_X;
 					else		
