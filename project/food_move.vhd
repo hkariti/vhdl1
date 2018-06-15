@@ -32,18 +32,17 @@ signal ObjectStartY_t : integer; -- range 80 to 400;
 
 begin
 		process ( RESETn,CLK)
+        variable recalc_Y : integer := StartY + (to_integer(unsigned(startX)) mod marginY);
+        variable recalc_X : integer := (to_integer(unsigned(StartX)) mod marginX) + baseStartX;
 		begin
 		  if RESETn = '0' then
-				ObjectStartY_t	<= StartY + (to_integer(unsigned(startX)) mod marginY);
-				ObjectStartX_t	<= (to_integer(unsigned(StartX)) mod marginX) + baseStartX ;
-			elsif collision = '1' then
-				ObjectStartY_t	<= StartY + (to_integer(unsigned(startX)) mod marginY);
-				ObjectStartX_t	<= (to_integer(unsigned(StartX)) mod marginX) + baseStartX ;
+				ObjectStartY_t	<= recalc_Y;
+				ObjectStartX_t	<= recalc_X;
 			elsif rising_edge(CLK) then
 				if timer_done = '1' then
-					if ObjectStartY_t <=  0 then
-						ObjectStartY_t <= StartY + (to_integer(unsigned(startX)) mod marginY);
-						ObjectStartX_t <= (to_integer(unsigned(StartX)) mod marginX) + baseStartX ;
+					if ObjectStartY_t <=  0 or collision = '1' then
+						ObjectStartY_t <= recalc_Y;
+						ObjectStartX_t <= recalc_X;
 					else		
 						ObjectStartY_t <= ObjectStartY_t - speed;
 						ObjectStartX_t <= ObjectStartX_t - 2*speed;
