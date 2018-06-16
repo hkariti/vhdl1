@@ -42,7 +42,7 @@ architecture behav of game_logic is
    constant init_speed : integer := 1;
    constant init_life : unsigned(2 downto 0) := "111";
    constant init_score : integer := 0;
-   constant food_score_value : integer := 10;
+   constant food_score_value : integer := 5;
    constant screen_welcome : std_logic_vector(1 downto 0) := "00";
    constant screen_playing : std_logic_vector(1 downto 0) := "01";
    constant screen_game_over : std_logic_vector(1 downto 0) := "11";
