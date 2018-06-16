@@ -149,11 +149,8 @@ set_location_assignment PIN_W24 -to ADC_SCLK
 set_global_assignment -name SDC_FILE constraints/DE10_Standard_Audio.sdc
 set_global_assignment -name VHDL_FILE VGA_Controller/VGA_Controller.vhd
 set_global_assignment -name BDF_FILE rtl/TOP_SIFTACH.bdf
-set_global_assignment -name VHDL_FILE rtl/timer.vhd
 set_global_assignment -name VHDL_FILE rtl/smileyfacemove.vhd
-set_global_assignment -name VHDL_FILE rtl/smileyface_object.vhd
 set_global_assignment -name VHDL_FILE rtl/objects_mux.vhd
-set_global_assignment -name VHDL_FILE rtl/back_ground_draw.vhd
 set_global_assignment -name TCL_SCRIPT_FILE constraints/pin.tcl
 set_location_assignment PIN_AA16 -to CLOCK2_50
 set_location_assignment PIN_Y26 -to CLOCK3_50
@@ -165,7 +162,6 @@ set_location_assignment PIN_AB25 -to KBD_CLK
 set_location_assignment PIN_AA25 -to KBD_DAT
 set_location_assignment PIN_Y24 -to AUD_I2C_SCLK
 set_location_assignment PIN_Y23 -to AUD_I2C_SDAT
-set_global_assignment -name VHDL_FILE rtl/rect_draw.vhd
 set_global_assignment -name QIP_FILE lpm_con.qip
 set_global_assignment -name VHDL_FILE rtl/collision_detect.vhd
 set_global_assignment -name VHDL_FILE rtl/game_logic.vhd
@@ -180,7 +176,6 @@ set_global_assignment -name VHDL_FILE one_sec_turbo.vhd
 set_global_assignment -name VHDL_FILE hexss.vhd
 set_global_assignment -name VHDL_FILE random.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
-set_global_assignment -name VHDL_FILE helicopter_object.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
@@ -314,11 +309,7 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -t
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_global_assignment -name BDF_FILE sounds_top.bdf
-set_global_assignment -name QIP_FILE sounds/scream_sound.qip
-set_global_assignment -name QIP_FILE sounds/slurp_sound.qip
-set_global_assignment -name QIP_FILE sounds/thunder_sound.qip
 set_global_assignment -name VHDL_FILE sound_mixer.vhd
-set_global_assignment -name QIP_FILE sounds/background_sound.qip
 set_global_assignment -name QIP_FILE slurp_sound_1.qip
 set_global_assignment -name QIP_FILE scream_sound_1.qip
 set_global_assignment -name QIP_FILE thunder_sound_1.qip

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_game
-Sat Jun 16 22:08:11 2018
+Sat Jun 16 22:11:51 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -122,7 +122,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Jun 16 22:08:10 2018       ;
+; Analysis & Synthesis Status     ; Successful - Sat Jun 16 22:11:50 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; vga_game                                    ;
 ; Top-level Entity Name           ; TOP_SIFTACH                                 ;
@@ -242,7 +242,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  26.6%      ;
+;     Processor 2            ;  26.7%      ;
 +----------------------------+-------------+
 
 
@@ -437,14 +437,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 15369          ;
+; Estimate of Logic utilization (ALMs needed) ; 15337          ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 26660          ;
+; Combinational ALUT usage for logic          ; 26596          ;
 ;     -- 7 input functions                    ; 388            ;
-;     -- 6 input functions                    ; 3431           ;
-;     -- 5 input functions                    ; 2151           ;
-;     -- 4 input functions                    ; 6451           ;
-;     -- <=3 input functions                  ; 14239          ;
+;     -- 6 input functions                    ; 3430           ;
+;     -- 5 input functions                    ; 2147           ;
+;     -- 4 input functions                    ; 6452           ;
+;     -- <=3 input functions                  ; 14179          ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 2733           ;
 ;                                             ;                ;
@@ -456,8 +456,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 2518           ;
-; Total fan-out                               ; 116288         ;
-; Average fan-out                             ; 3.86           ;
+; Total fan-out                               ; 116153         ;
+; Average fan-out                             ; 3.87           ;
 +---------------------------------------------+----------------+
 
 
@@ -466,8 +466,8 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                                 ; Entity Name                                   ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------+--------------+
-; |TOP_SIFTACH                                                                                                                            ; 26660 (2)           ; 2733 (0)                  ; 4136320           ; 10         ; 64   ; 0            ; |TOP_SIFTACH                                                                                                                                                                                                                                                                                                                                                                                        ; TOP_SIFTACH                                   ; work         ;
-;    |game_logic:inst27|                                                                                                                  ; 195 (195)           ; 112 (112)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_SIFTACH|game_logic:inst27                                                                                                                                                                                                                                                                                                                                                                      ; game_logic                                    ; work         ;
+; |TOP_SIFTACH                                                                                                                            ; 26596 (3)           ; 2733 (0)                  ; 4136320           ; 10         ; 64   ; 0            ; |TOP_SIFTACH                                                                                                                                                                                                                                                                                                                                                                                        ; TOP_SIFTACH                                   ; work         ;
+;    |game_logic:inst27|                                                                                                                  ; 130 (130)           ; 112 (112)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_SIFTACH|game_logic:inst27                                                                                                                                                                                                                                                                                                                                                                      ; game_logic                                    ; work         ;
 ;    |graphic_top:inst|                                                                                                                   ; 9826 (2)            ; 257 (0)                   ; 1638400           ; 3          ; 0    ; 0            ; |TOP_SIFTACH|graphic_top:inst                                                                                                                                                                                                                                                                                                                                                                       ; graphic_top                                   ; work         ;
 ;       |VGA_Controller:inst|                                                                                                             ; 160 (160)           ; 140 (140)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_SIFTACH|graphic_top:inst|VGA_Controller:inst                                                                                                                                                                                                                                                                                                                                                   ; VGA_Controller                                ; work         ;
 ;       |background:inst48|                                                                                                               ; 56 (0)              ; 8 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |TOP_SIFTACH|graphic_top:inst|background:inst48                                                                                                                                                                                                                                                                                                                                                     ; background                                    ; work         ;
@@ -1162,11 +1162,11 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 2733  ;
-; Number of registers using Synchronous Clear  ; 698   ;
+; Number of registers using Synchronous Clear  ; 701   ;
 ; Number of registers using Synchronous Load   ; 221   ;
 ; Number of registers using Asynchronous Clear ; 1680  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1438  ;
+; Number of registers using Clock Enable       ; 1439  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1176,14 +1176,14 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; game_logic:inst27|speed_t[0]                                                                                                                                                                                                                                                                                                    ; 7       ;
 ; game_logic:inst27|life_t[2]                                                                                                                                                                                                                                                                                                     ; 13      ;
 ; game_logic:inst27|life_t[1]                                                                                                                                                                                                                                                                                                     ; 12      ;
 ; game_logic:inst27|life_t[0]                                                                                                                                                                                                                                                                                                     ; 11      ;
+; test_toggle:inst12|NUM_LOCK:inst|pr_state                                                                                                                                                                                                                                                                                       ; 2       ;
 ; graphic_top:inst|smileyfacemove:inst3|ObjectStartY_t[3]                                                                                                                                                                                                                                                                         ; 4       ;
 ; graphic_top:inst|smileyfacemove:inst3|ObjectStartY_t[7]                                                                                                                                                                                                                                                                         ; 4       ;
 ; graphic_top:inst|smileyfacemove:inst3|ObjectStartY_t[6]                                                                                                                                                                                                                                                                         ; 4       ;
-; test_toggle:inst12|NUM_LOCK:inst|pr_state                                                                                                                                                                                                                                                                                       ; 2       ;
-; game_logic:inst27|speed_t[0]                                                                                                                                                                                                                                                                                                    ; 7       ;
 ; game_logic:inst27|restart_game_t                                                                                                                                                                                                                                                                                                ; 4       ;
 ; random_top:inst37|random:inst79|random_t[5]                                                                                                                                                                                                                                                                                     ; 8       ;
 ; random_top:inst37|random:inst80|random_t[3]                                                                                                                                                                                                                                                                                     ; 6       ;
@@ -1194,8 +1194,6 @@ Encoding Type:  One-Hot
 ; random_top:inst37|random:inst81|random_t[0]                                                                                                                                                                                                                                                                                     ; 6       ;
 ; random_top:inst37|random:inst81|random_t[5]                                                                                                                                                                                                                                                                                     ; 8       ;
 ; random_top:inst37|random:inst81|random_t[4]                                                                                                                                                                                                                                                                                     ; 7       ;
-; random_top:inst37|random:inst80|random_t[7]                                                                                                                                                                                                                                                                                     ; 3       ;
-; random_top:inst37|random:inst81|random_t[6]                                                                                                                                                                                                                                                                                     ; 6       ;
 ; random_top:inst37|random:inst65|random_t[3]                                                                                                                                                                                                                                                                                     ; 6       ;
 ; random_top:inst37|random:inst65|random_t[2]                                                                                                                                                                                                                                                                                     ; 6       ;
 ; random_top:inst37|random:inst65|random_t[5]                                                                                                                                                                                                                                                                                     ; 6       ;
@@ -1210,6 +1208,8 @@ Encoding Type:  One-Hot
 ; random_top:inst37|random:inst63|random_t[8]                                                                                                                                                                                                                                                                                     ; 6       ;
 ; random_top:inst37|random:inst64|random_t[3]                                                                                                                                                                                                                                                                                     ; 6       ;
 ; random_top:inst37|random:inst64|random_t[5]                                                                                                                                                                                                                                                                                     ; 6       ;
+; random_top:inst37|random:inst80|random_t[7]                                                                                                                                                                                                                                                                                     ; 3       ;
+; random_top:inst37|random:inst81|random_t[6]                                                                                                                                                                                                                                                                                     ; 6       ;
 ; random_top:inst37|random:inst80|random_t[9]                                                                                                                                                                                                                                                                                     ; 1       ;
 ; sounds_top:inst26|audio_codec_controller:audio_codec_controller_inst|i2c:i2c_inst|I2C_clk_0                                                                                                                                                                                                                                     ; 2       ;
 ; sounds_top:inst26|audio_codec_controller:audio_codec_controller_inst|i2c:i2c_inst|I2C_clk_en                                                                                                                                                                                                                                    ; 2       ;
@@ -1282,18 +1282,17 @@ Encoding Type:  One-Hot
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TOP_SIFTACH|sounds_top:inst26|addr_counter:game_over_counter|counter[12]                                                                                                            ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TOP_SIFTACH|sounds_top:inst26|thunder_sound_1:inst26|altsyncram:altsyncram_component|altsyncram_0f24:auto_generated|mux_ofb:mux2|l2_w6_n0_mux_dataout                               ;
 ; 32:1               ; 8 bits    ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |TOP_SIFTACH|sounds_top:inst26|background_sound:inst1|altsyncram:altsyncram_component|altsyncram_8334:auto_generated|mux_chb:mux2|l5_w1_n0_mux_dataout                               ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |TOP_SIFTACH|lpm_con:inst14|lpm_constant:LPM_CONSTANT_component|lpm_constant_gi8:ag|sld_mod_ram_rom:mgl_prim1|constant_shift_reg[4]                                                  ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |TOP_SIFTACH|lpm_con:inst14|lpm_constant:LPM_CONSTANT_component|lpm_constant_gi8:ag|sld_mod_ram_rom:mgl_prim1|constant_shift_reg[3]                                                  ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |TOP_SIFTACH|lpm_con:inst14|lpm_constant:LPM_CONSTANT_component|lpm_constant_gi8:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:no_name_gen:info_rom_sr|word_counter[0] ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |TOP_SIFTACH|lpm_con:inst14|lpm_constant:LPM_CONSTANT_component|lpm_constant_gi8:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:no_name_gen:info_rom_sr|WORD_SR[0]      ;
-; 6:1                ; 30 bits   ; 120 LEs       ; 0 LEs                ; 120 LEs                ; Yes        ; |TOP_SIFTACH|game_logic:inst27|speed_counter[30]                                                                                                                                     ;
-; 6:1                ; 30 bits   ; 120 LEs       ; 0 LEs                ; 120 LEs                ; Yes        ; |TOP_SIFTACH|game_logic:inst27|speed_t[20]                                                                                                                                           ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |TOP_SIFTACH|lpm_con:inst14|lpm_constant:LPM_CONSTANT_component|lpm_constant_gi8:ag|sld_mod_ram_rom:mgl_prim1|sld_rom_sr:\constant_logic_gen:no_name_gen:info_rom_sr|WORD_SR[1]      ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 0 LEs                ; 120 LEs                ; Yes        ; |TOP_SIFTACH|game_logic:inst27|speed_counter[12]                                                                                                                                     ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 0 LEs                ; 120 LEs                ; Yes        ; |TOP_SIFTACH|game_logic:inst27|speed_t[27]                                                                                                                                           ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TOP_SIFTACH|game_logic:inst27|life_t[1]                                                                                                                                             ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_SIFTACH|game_logic:inst27|speed_counter[31]                                                                                                                                     ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_SIFTACH|game_logic:inst27|speed_t[31]                                                                                                                                           ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |TOP_SIFTACH|game_logic:inst27|score_t                                                                                                                                               ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |TOP_SIFTACH|test_toggle:inst12|bitrec:inst2|Selector7                                                                                                                               ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |TOP_SIFTACH|game_logic:inst27|Selector1                                                                                                                                             ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |TOP_SIFTACH|game_logic:inst27|Selector2                                                                                                                                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |TOP_SIFTACH|game_logic:inst27|Selector5                                                                                                                                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |TOP_SIFTACH|game_logic:inst27|Selector4                                                                                                                                             ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |TOP_SIFTACH|test_toggle:inst12|bitrec:inst2|Selector8                                                                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -3147,32 +3146,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                                                      ; Count  ;
 +-----------------------------------------------------------+--------+
 ; arriav_ff                                                 ; 1346   ;
-;     CLR                                                   ; 285    ;
-;     CLR SCLR                                              ; 206    ;
+;     CLR                                                   ; 283    ;
+;     CLR SCLR                                              ; 207    ;
 ;     CLR SLD                                               ; 12     ;
 ;     ENA                                                   ; 76     ;
-;     ENA CLR                                               ; 347    ;
-;     ENA CLR SCLR                                          ; 312    ;
+;     ENA CLR                                               ; 346    ;
+;     ENA CLR SCLR                                          ; 314    ;
 ;     ENA SCLR                                              ; 64     ;
 ;     ENA SLD                                               ; 16     ;
 ;     plain                                                 ; 28     ;
-; arriav_lcell_comb                                         ; 25907  ;
-;     arith                                                 ; 9424   ;
+; arriav_lcell_comb                                         ; 25843  ;
+;     arith                                                 ; 9393   ;
 ;         0 data inputs                                     ; 922    ;
-;         1 data inputs                                     ; 1795   ;
-;         2 data inputs                                     ; 750    ;
-;         3 data inputs                                     ; 2847   ;
+;         1 data inputs                                     ; 1764   ;
+;         2 data inputs                                     ; 718    ;
+;         3 data inputs                                     ; 2879   ;
 ;         4 data inputs                                     ; 3110   ;
 ;     extend                                                ; 383    ;
 ;         7 data inputs                                     ; 383    ;
-;     normal                                                ; 15620  ;
+;     normal                                                ; 15587  ;
 ;         0 data inputs                                     ; 1      ;
-;         1 data inputs                                     ; 43     ;
-;         2 data inputs                                     ; 5994   ;
-;         3 data inputs                                     ; 1074   ;
-;         4 data inputs                                     ; 3251   ;
-;         5 data inputs                                     ; 2037   ;
-;         6 data inputs                                     ; 3220   ;
+;         1 data inputs                                     ; 44     ;
+;         2 data inputs                                     ; 5993   ;
+;         3 data inputs                                     ; 1045   ;
+;         4 data inputs                                     ; 3252   ;
+;         5 data inputs                                     ; 2033   ;
+;         6 data inputs                                     ; 3219   ;
 ;     shared                                                ; 480    ;
 ;         0 data inputs                                     ; 42     ;
 ;         1 data inputs                                     ; 170    ;
@@ -3185,7 +3184,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block                                        ; 504    ;
 ;                                                           ;        ;
 ; Max LUT depth                                             ; 143.00 ;
-; Average LUT depth                                         ; 67.00  ;
+; Average LUT depth                                         ; 67.16  ;
 +-----------------------------------------------------------+--------+
 
 
@@ -3194,7 +3193,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:09     ;
+; Top            ; 00:01:10     ;
 +----------------+--------------+
 
 
@@ -3347,7 +3346,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Jun 16 22:05:58 2018
+    Info: Processing started: Sat Jun 16 22:09:35 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_game -c vga_game
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -4273,7 +4272,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/db/cmpr_99c.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.06.16.22:06:43 Progress: Loading sld1ebefb95/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.06.16.22:10:21 Progress: Loading sld1ebefb95/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -4673,8 +4672,8 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register graphic_top:inst|VGA_Controller:inst|V_Cont[0] will power up to Low File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/VGA_Controller/VGA_Controller.vhd Line: 152
     Critical Warning (18010): Register game_logic:inst27|speed_counter[31] will power up to Low File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/rtl/game_logic.vhd Line: 53
     Critical Warning (18010): Register game_logic:inst27|speed_counter[0] will power up to Low File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/rtl/game_logic.vhd Line: 53
-    Critical Warning (18010): Register one_sec_turbo:inst45|one_sec[31] will power up to Low File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/one_sec_turbo.vhd Line: 30
     Critical Warning (18010): Register test_toggle:inst12|NUM_LOCK:inst|pr_state will power up to High File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/num_lock.vhd Line: 23
+    Critical Warning (18010): Register one_sec_turbo:inst45|one_sec[31] will power up to Low File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/one_sec_turbo.vhd Line: 30
     Critical Warning (18010): Register one_sec_turbo:inst45|one_sec[0] will power up to Low File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/one_sec_turbo.vhd Line: 30
     Critical Warning (18010): Register objects_top:inst23|food_move:inst31|ObjectStartY_t[31] will power up to Low File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/food_move.vhd Line: 36
     Critical Warning (18010): Register random_top:inst37|random:inst79|random_t[5] will power up to High File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/random.vhd Line: 24
@@ -4935,16 +4934,16 @@ Info (35003): Optimize away 113 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "sounds_top:inst26|audio_codec_controller:audio_codec_controller_inst|adc2parallel:adc2parallel_right_inst|adc_synch_fifo:adc_synch_fifo_inst|dcfifo:dcfifo_component|dcfifo_6hr1:auto_generated|ram_address_a[4]" File: C:/LIMUDIM/semester 6/MAABADA1/lab1/project/audio_codec_controller.qxp Line: -1
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "AUD_ADCDAT"
-Info (21057): Implemented 28504 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 28441 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 55 output pins
-    Info (21061): Implemented 27868 logic cells
+    Info (21061): Implemented 27805 logic cells
     Info (21064): Implemented 557 RAM segments
     Info (21062): Implemented 10 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 329 warnings
-    Info: Peak virtual memory: 5234 megabytes
-    Info: Processing ended: Sat Jun 16 22:08:11 2018
-    Info: Elapsed time: 00:02:13
-    Info: Total CPU time (on all processors): 00:03:14
+    Info: Peak virtual memory: 5254 megabytes
+    Info: Processing ended: Sat Jun 16 22:11:51 2018
+    Info: Elapsed time: 00:02:16
+    Info: Total CPU time (on all processors): 00:03:20
 
 
