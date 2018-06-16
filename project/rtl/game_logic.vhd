@@ -99,26 +99,32 @@ begin
                   sm <= collision_detected;
               end if;
           when collision_detected =>
-              life_t <= shift_right(life_t, 1);
-              if (life_t = "000") then
-                  sm <= game_over;
-              else
-                  scream_snd_start_t <= '1';
-                  speed_t <= init_speed;
-                  speed_counter <= 0;
-                  restart_game_t <= '0';
-                  sm <= playing;
-              end if;
+			     -- Wait for collision to end
+				  if (collision = '0') then
+				      life_t <= shift_right(life_t, 1);
+				      if (life_t = "000") then
+						    sm <= game_over;
+					    else
+						    scream_snd_start_t <= '1';
+						    speed_t <= init_speed;
+						    speed_counter <= 0;
+						    restart_game_t <= '0';
+						    sm <= playing;
+					    end if;
+			     end if;
           when game_over =>
               background_snd_stop_t <= '1';
               background_snd_start_t <= '0';
               game_over_snd_start_t <= '1';
               screen_choice_t <= screen_game_over;
-              sm <= game_over_wait;
+				  -- wait for space to be released
+				  if (space_pressed = '0') then
+				      sm <= game_over_wait;
+				  end if;
           when game_over_wait =>
               background_snd_start_t <= '0';
               screen_choice_t <= screen_game_over;
-              if (space_pressed <= '1') then
+              if (space_pressed = '1') then
                   sm <= new_game;
               end if;
 		end case;
