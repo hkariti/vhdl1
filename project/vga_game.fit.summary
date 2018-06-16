@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sat Jun 16 21:58:26 2018
+Fitter Status : Successful - Sat Jun 16 22:23:02 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : vga_game
 Top-level Entity Name : TOP_SIFTACH
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 15,352 / 41,910 ( 37 % )
-Total registers : 2879
+Logic utilization (in ALMs) : 15,334 / 41,910 ( 37 % )
+Total registers : 2911
 Total pins : 64 / 499 ( 13 % )
 Total virtual pins : 0
 Total block memory bits : 4,136,320 / 5,662,720 ( 73 % )
