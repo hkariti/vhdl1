@@ -15,7 +15,7 @@ ENTITY prescaler IS
 		(
 			CLK_IN					:	IN  STD_LOGIC				;	
 			resetN					:  IN	 STD_LOGIC;
-			count_limit          :  IN  INTEGER  RANGE 0 to 1023;
+			count_limit          :  IN  INTEGER ;
 			prescaler_1	 		:	OUT STD_LOGIC ;
 			prescaler_2	 		:	OUT STD_LOGIC 
 		);

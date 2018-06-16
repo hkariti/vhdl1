@@ -12,18 +12,17 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 280 208)
+	(rect 16 16 280 176)
 	(text "experiment_sinus_generator" (rect 5 0 172 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 171 24 188)(font "Intel Clear" ))
+	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -74,13 +73,6 @@ agreement for further details.
 		(line (pt 0 128)(pt 16 128))
 	)
 	(port
-		(pt 0 144)
-		(input)
-		(text "mux[3..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
-		(text "mux[3..0]" (rect 21 139 76 158)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 144)(pt 16 144)(line_width 3))
-	)
-	(port
 		(pt 264 32)
 		(output)
 		(text "MICROPHON_LED" (rect 0 0 107 19)(font "Intel Clear" (font_size 8)))
@@ -116,6 +108,6 @@ agreement for further details.
 		(line (pt 264 96)(pt 248 96))
 	)
 	(drawing
-		(rectangle (rect 16 16 248 176))
+		(rectangle (rect 16 16 248 144))
 	)
 )

@@ -11,20 +11,20 @@ entity addr_counter is
             start: in std_logic;
             stop: in std_logic;
             length: in integer;
-            addr: out std_logic_vector(14 downto 0)
+            addr: out integer
         );
 end;
  
 architecture Behavioral of addr_counter is
     type state is (idle, playing);
     signal sm : state;
-    signal counter: std_logic_vector(14 downto 0);
+    signal counter: std_logic_vector(31 downto 0);
 begin 
   
 process(clk_in,resetN)
 begin
     if ResetN='0' then
-        counter <= "000000000000000";
+        counter <= "00000000000000000000000000000000";
         sm <= idle;
     elsif(rising_edge(clk_in)) then
         case sm is
@@ -35,7 +35,7 @@ begin
                 end if;
             when playing =>
                 if en='1' then
-                    if (stop = '1' or counter = conv_std_logic_vector(length)) then
+                    if (stop = '1' or counter = conv_std_logic_vector(length,32)) then
                         sm <= idle;
                     else
                         counter <= counter + 1;
@@ -44,5 +44,5 @@ begin
         end case;
     end if;
    end process;
-   addr <= counter;
+   addr <= conv_integer(counter);
 end Behavioral;
