@@ -27,19 +27,23 @@ end sound_mixer;
 
 architecture behave of sound_mixer is
 
-constant volume_scale_factor : integer := 1;
+constant volume_scale_factor : integer := 4;
 signal mixed_t : integer range 0 to 65535;
-
+signal stream1_t : integer range 0 to 65535;
+signal stream2_t : integer range 0 to 65535;
+signal stream3_t : integer range 0 to 65535;
+signal stream4_t : integer range 0 to 65535;
 begin	
 process (CLK_IN, resetN)
 begin
 	if (resetN = '0') then
 		mixed_t <= 0;
 	elsif (rising_edge(clk_in)) then
-		mixed_t <= 	conv_integer(stream1)/volume_scale_factor +
-						conv_integer(stream2)/volume_scale_factor +
-						conv_integer(stream3)/volume_scale_factor +
-						conv_integer(stream4)/volume_scale_factor;
+		stream1_t <= stream1;
+		stream2_t <= stream2;
+		stream3_t <= stream3;
+		stream4_t <= stream4;
+		mixed_t <= 	stream1_t + stream2_t + stream3_t + stream4_t;
 	end if;
 end process;
 

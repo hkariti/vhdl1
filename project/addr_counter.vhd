@@ -34,8 +34,11 @@ begin
                     sm <= playing;
                 end if;
             when playing =>
+					 if stop = '1' then
+							sm <= idle;
+				    end if;
                 if en='1' then
-                    if (stop = '1' or counter = conv_std_logic_vector(length,32)) then
+                    if (counter = conv_std_logic_vector(length,32)) then
                         sm <= idle;
                     else
                         counter <= counter + 1;

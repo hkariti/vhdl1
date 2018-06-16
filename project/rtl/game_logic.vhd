@@ -70,6 +70,7 @@ begin
       slurp_snd_start_t <= '0';
       scream_snd_start_t <= '0';
       restart_game_t <= '1';
+		screen_choice_t <= screen_playing;
       case sm is
           when init =>
               screen_choice_t <= screen_welcome;
@@ -78,7 +79,7 @@ begin
               end if;
           when new_game =>
                   sm <= playing;
-                  restart_game_t <= '1';
+                  restart_game_t <= '0';
                   score_t <= init_score;
                   life_t <= init_life;
                   speed_t <= init_speed;

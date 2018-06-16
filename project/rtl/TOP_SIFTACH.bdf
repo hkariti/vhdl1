@@ -2570,3 +2570,9 @@ refer to the applicable agreement for further details.
 	(pt 848 48)
 	(pt 902 48)
 )
+(connector
+	(text "screen_choice[1..0]" (rect 424 1040 513 1057)(font "Intel Clear" ))
+	(pt 416 1056)
+	(pt 464 1056)
+	(bus)
+)

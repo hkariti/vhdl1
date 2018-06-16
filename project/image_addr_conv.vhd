@@ -35,7 +35,7 @@ process(clk_in,resetN)
 			 drawing_request_t <= drawing_request_X and drawing_request_Y;
 			 addr_t <= 0;
           if (drawing_request_t = '1') then
-              addr_t <= oCoord_Y/scale*(size_X/scale) + oCoord_X/scale;
+              addr_t <= (oCoord_Y-start_Y)/scale*(size_X/scale) + (oCoord_X-start_X)/scale;
           end if;
       end if;
    end process;
